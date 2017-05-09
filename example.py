@@ -31,9 +31,9 @@ if __name__ == '__main__':
     client.on_connection_state(connection_handler)
     client.tls_set('ca.crt')  # use on ssl only
     client.connect(
-        'mydevice01',
-        'xxxxxxxxxxxxSSSSSSSSHHHHHHAAA7',
-        'dev-app.thingface.io'
+        'device ID',
+        'device secret key',
+        'host'
     )
     client.on_command(command_handler)
     temp = generate_temp()
