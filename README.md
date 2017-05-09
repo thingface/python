@@ -9,10 +9,10 @@ Take an inspiration and feel free to clone this repository and modify it as you 
 # How to run
 - Download or clone this repository to your PC
 - Setup *device ID*, *device secret key* and *host* in [example.py](example.py)
-    - in current virtualenvi run `pip install paho-mqtt` to install all dependencies
+    - in current virtualenv run `pip install paho-mqtt` to install all dependencies
     - Run `python example.py` to finally execute this example
 
 # More information
-    - [Thingface GitHub Repositories](https://github.com/thingface)
-    - [Thingface Platform Website](http://thingface.io/)
+- [Thingface GitHub Repositories](https://github.com/thingface)
+- [Thingface Platform Website](http://thingface.io/)
 
