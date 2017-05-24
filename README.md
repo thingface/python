@@ -32,35 +32,35 @@ API is very simple. Have a look to api reference.
 ### Client()
 thingface client constructor
 
-### thingface.tls_set(certFilePath)
+### client.tls_set(certFilePath)
 set certificate for mqtt connection to specified certFilePath.
 
-### thingface.connect(deviceId, deviceSecretKey, host)
+### client.connect(deviceId, deviceSecretKey, host)
 connect to the thingface device gateway specified by the given host name with current device ID and device secret key.
 - `deviceId` - device ID
 - `deviceSecretKey` - secret key for that device
 - `host` - device gateway hostname
 
-### thingface.disconnect()
+### client.disconnect()
 disconnect from thingface device gateway
 
-### thingface.is_connected()
+### client.is_connected()
 check active connection state
 
-### thingface.on_error(callback)
+### client.on_error(callback)
 set event handler for error events
 
-### thingface.on_connection_state(callback)
+### client.on_connection_state(callback)
 set event handler for connection_state events
 
-### thingface.on_command(commandHandler, senderType, senderId)
+### client.on_command(commandHandler, senderType, senderId)
 set event handler of command events
 subscribe for commands from sender
 - `commandHandler` function to handle commands
 - `senderType`(optional) - sender type User or Device
 - `senderId` (optional) - sender ID (username or device ID), if sender is not provided device will receive commands from every user or device
 
-### thingface.send_sensor_value(sensorId, sensorValue)
+### client.send_sensor_value(sensorId, sensorValue)
 send sensor value to thingface gateway
 - `sensorId` - sensor ID from the device
 - `sensorValue` - current sensor value
