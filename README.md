@@ -14,15 +14,27 @@ A few lines of code and you're ready to control or monitor your device.
 ```python
 from thingface import Client
 
-# define command handler if needed
+# connection handler if needed
+def connection_handler(connected):
+    print('connection status %d' % (connected,))
+
+# optional error handler
+def error_handler(error):
+    print('error: %s' % (error,))
+
+# command handler if needed
 def command_handler(sender_type, sender_id, command, args):
     print(sender_type, sender_id, command, args)
 
+# initialize connection
 c = Client()
-c.tls_set('ca.crt')  # certificate for ssl
+c.on_error(error_handler)  # optional error handler
+c.on_connection_state(connection_handler)  # optional connection status handler
 c.connect('device_id', 'secret_key', 'host')  # connect to thingface gateway
 c.on_command(commnad_handler)  #  command handler if defined
+# send value and wait for commands
 c.send_sensor_value('sensor_name', 36.5)
+# quit if done
 c.disconnect()
 ```
 

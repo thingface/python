@@ -3,6 +3,7 @@
 
 import json
 import re
+import os.path
 import paho.mqtt.client as mqtt
 from time import sleep
 
@@ -92,6 +93,9 @@ class Client:
         '''Default constructor.'''
         self._mqttc = False
         self._ca_cert_path = None
+        ca_cert_path = os.path.join(os.path.dirname(__file__), 'ca.crt')
+        if os.path.exists(ca_cert_path):
+            self.tls_set(ca_cert_path)
 
     def tls_set(self, ca_cert_path):
         '''Set ca_certs for ssl connections. Used only with port=8883.'''
