@@ -27,9 +27,8 @@ def generate_temp():
 
 if __name__ == '__main__':
     client = Client()
-    client.on_error = error_handler
+    client.on_error(error_handler)
     client.on_connection_state(connection_handler)
-    client.tls_set('ca.crt')  # use on ssl only
     client.connect(
         'device ID',
         'device secret key',
